@@ -6,6 +6,7 @@ faasm_private_lib(wavmmodule
     LoadedDynamicModule.cpp
     syscalls.h
     chaining.cpp
+    checkpoint.cpp
     codegen.cpp
     dynlink.cpp
     env.cpp

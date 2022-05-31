@@ -14,6 +14,9 @@
 
 namespace wasm {
 
+// ----- Checkpointing stuff, move elsewhere eventually -----
+std::map<std::string, WAVM::Runtime::Compartment*> compartmentCache;
+
 WAVM_DECLARE_INTRINSIC_MODULE(env)
 
 WAVM_DECLARE_INTRINSIC_MODULE(wasi)
