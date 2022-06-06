@@ -79,6 +79,9 @@ int doRunner(int argc, char* argv[])
         SPDLOG_INFO("Adding input data: {}", inputData);
     }
 
+    // TODO - remove me
+    msg.set_cmdline("10 2");
+
     // Set up the system
     auto fac = std::make_shared<faaslet::FaasletFactory>();
     faabric::runner::FaabricMain m(fac);

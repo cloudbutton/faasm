@@ -364,6 +364,8 @@ int32_t s__writev(int32_t fd, int32_t iov, int32_t iovcnt);
 // Hack to include other files
 void chainLink();
 
+void checkpointLink();
+
 void dynlinkLink();
 
 void envLink();

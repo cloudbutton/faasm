@@ -80,6 +80,14 @@ std::string WAVMModuleCache::registerResetSnapshot(wasm::WasmModule& module,
     }
 }
 
+std::string registerCheckpointedModule(wasm::WAVMWasmModule& module,
+                                       faabric::Message& msg)
+{
+    std::string key = faabric::util::funcToString(msg, false) + "_checkpoint";
+
+
+}
+
 void WAVMModuleCache::clear()
 {
     faabric::util::FullLock lock(mx);

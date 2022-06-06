@@ -14,9 +14,6 @@
 
 namespace wasm {
 
-// ----- Checkpointing stuff, move elsewhere eventually -----
-std::map<std::string, WAVM::Runtime::Compartment*> compartmentCache;
-
 WAVM_DECLARE_INTRINSIC_MODULE(env)
 
 WAVM_DECLARE_INTRINSIC_MODULE(wasi)
@@ -238,6 +235,9 @@ class WAVMModuleCache
     std::string registerResetSnapshot(wasm::WasmModule& module,
                                       faabric::Message& msg);
 
+    std::string registerCheckpointedModule(wasm::WAVMWasmModule& module,
+                                           faabric::Message& msg);
+
     void clear();
 
     size_t getTotalCachedModuleCount();
@@ -252,4 +252,7 @@ class WAVMModuleCache
 WAVMModuleCache& getWAVMModuleCache();
 
 WAVMWasmModule* getExecutingWAVMModule();
+
+// ----- Checkpointing stuff, move elsewhere eventually -----
+static std::map<std::string, std::shared_ptr<WAVMWasmModule>> compartmentCache;
 }

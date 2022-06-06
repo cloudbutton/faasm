@@ -244,6 +244,7 @@ I32 executeSyscall(int syscallNumber,
 void linkHook()
 {
     chainLink();
+    checkpointLink();
     dynlinkLink();
     envLink();
     faasmLink();

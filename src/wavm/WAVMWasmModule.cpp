@@ -140,6 +140,8 @@ WAVMWasmModule::WAVMWasmModule(const WAVMWasmModule& other)
 void WAVMWasmModule::clone(const WAVMWasmModule& other,
                            const std::string& snapshotKey)
 {
+    SPDLOG_DEBUG("Cloning module");
+
     // If bound, we want to reclaim all the memory we've created _before_
     // cloning from the zygote otherwise it's lost forever
     if (_isBound) {
